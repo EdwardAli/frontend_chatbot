@@ -29,7 +29,7 @@ function Registration() {
 // onsubmit send the values and navigate to login page
   const onSubmit = (data) => {
     console.log(data)
-    axios.post("http://localhost:3002/shop/register", data).then(() => {
+    axios.post("https://windowshoppingserver.herokuapp.com/shop/register", data).then(() => {
       console.log(data);
       navigate('/login')
     });

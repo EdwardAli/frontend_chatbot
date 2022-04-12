@@ -51,7 +51,7 @@ function SupplierSProduct() {
  // getting list of user products based on user id 
  useEffect(() => { 
     var ProductId = localStorage.getItem('id');
-      axios.get(`http://localhost:3002/product/byId/${ProductId}`).then((response) => {
+      axios.get(`https://windowshoppingserver.herokuapp.com/product/byId/${ProductId}`).then((response) => {
           console.log(response.data);
            // console.log(response.data.Name);
           setName(response.data.Name);
@@ -81,7 +81,7 @@ const data = {
 ///product/update/:id
   var shopItemId = localStorage.getItem('shopItemId');
   axios
-    .put(`http://localhost:3002/product/update/${shopItemId}`, data)
+    .put(`https://windowshoppingserver.herokuapp.com/product/update/${shopItemId}`, data)
     .then(() => {
       navigate("/supplier");
     });
@@ -91,7 +91,7 @@ const data = {
 const deleteProduct = () => {
   var shopItemId = localStorage.getItem('shopItemId');
   axios
-    .delete(`http://localhost:3001/product/delete/${shopItemId}`, {
+    .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${shopItemId}`, {
       headers: { accessToken: localStorage.getItem("accessToken") },
     })
     .then(() => {

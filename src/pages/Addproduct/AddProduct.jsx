@@ -27,7 +27,7 @@ function Registration() {
 // onsubmit send the values and navigate to login page
 var id = localStorage.getItem("id");
   const onSubmit = (data) => {
-    axios.post(`https://serveriweta.herokuapp.com/product/create/${id}`, data).then(() => {
+    axios.post(`https://windowshoppingserver.herokuapp.com/product/create/${id}`, data).then(() => {
       console.log(data);
       navigate('/');
     });

@@ -56,7 +56,7 @@ function Supplier() {
  // getting list of user products based on user id 
   useEffect(() => { 
   var id = localStorage.getItem('id');
-    axios.get(`http://localhost:3002/product/byShop/${id}`).then((response) => {
+    axios.get(`https://windowshoppingserver.herokuapp.com/product/byShop/${id}`).then((response) => {
         console.log(response.data);
        setProducts(response.data);
         

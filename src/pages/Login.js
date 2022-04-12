@@ -32,7 +32,7 @@ function Login() {
     
     const data = { shopName:shopName, password: password };
     console.log(data);
-    axios.post("http://localhost:3002/shop/login", data).then((response) => {
+    axios.post("https://windowshoppingserver.herokuapp.com/shop/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {
