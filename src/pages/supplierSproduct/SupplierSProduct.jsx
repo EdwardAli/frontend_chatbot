@@ -50,8 +50,8 @@ function SupplierSProduct() {
   
  // getting list of user products based on user id 
  useEffect(() => { 
-    var ProductId = localStorage.getItem('shopItemId');
-      axios.get(`https://serveriweta.herokuapp.com/product/byId/${shopItemId}`).then((response) => {
+    var ProductId = localStorage.getItem('id');
+      axios.get(`http://localhost:3002/product/byId/${ProductId}`).then((response) => {
           console.log(response.data);
            // console.log(response.data.Name);
           setName(response.data.Name);
