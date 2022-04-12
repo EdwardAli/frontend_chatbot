@@ -25,9 +25,9 @@ function Registration() {
   });
 
 // onsubmit send the values and navigate to login page
-var id = localStorage.getItem("id");
+var shopId = localStorage.getItem("id");
   const onSubmit = (data) => {
-    axios.post(`https://windowshoppingserver.herokuapp.com/product/create/${id}`, data).then(() => {
+    axios.post(`https://windowshoppingserver.herokuapp.com/product/create/${shopId}`, data).then(() => {
       console.log(data);
       navigate('/');
     });
