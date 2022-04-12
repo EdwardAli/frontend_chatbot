@@ -44,7 +44,7 @@ function SupplierProducts() {
    var id = localStorage.getItem("id");
    console.log(data);
     axios
-      .post(`https://windowshoppingserver.herokuapp.com/hproduct/create/${id}`, data, {
+      .post(`https://windowshoppingserver.herokuapp.com/product/create/${id}`, data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
