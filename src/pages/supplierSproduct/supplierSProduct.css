@@ -1,0 +1,32 @@
+
+.Container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100% !important;
+    height: 100vh;
+    z-index: 999;
+  }
+  
+  .Container input
+   {
+    width: 30%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px;
+  }
+  
+  .Container button {
+    width: 30%;
+    height:40px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px;
+    background-color: dodgerblue;
+    color: white;
+  }
+  .Container input {
+    border: 2px solid dodgerblue;
+  }
+  

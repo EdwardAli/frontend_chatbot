@@ -1,0 +1,517 @@
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+
+/* CREATE POST PAGE CSS */
+
+
+.createPostPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+  height: 100vh;
+  padding-top: 10px;
+  z-index: 999;
+}
+/* Create livestock*/
+.createLivestock{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+  z-index: 999;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  border: 2px solid dodgerblue;
+  border-radius: 5px;
+ 
+}
+
+
+.formContainer__ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  border: 2px solid dodgerblue;
+  border-radius: 5px;
+ 
+}
+
+
+.formContainer__ input{
+  width: 93%;
+  height: 40px;
+  border-radius: 8px;
+  margin: 10px;
+  border: 2px solid dodgerblue;
+ 
+}
+
+.formContainer__ button {
+  width: 93%;
+  height:40px;
+  border-radius: 8px;
+  margin: 10px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+
+.formRegisterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+ 
+}
+.formRegisterContainer #inputCreatePost {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.formRegisterContainer button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  background-color: lightskyblue;
+  border-radius: 5px;
+  color: white;
+}
+
+.formRegisterContainer button:hover {
+  cursor: pointer;
+  background-color: dodgerblue;
+}
+
+
+.formContainer #inputCreatePost {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.formContainer button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  background-color: lightskyblue;
+  border-radius: 5px;
+  color: white;
+}
+
+.formContainer button:hover {
+  cursor: pointer;
+  background-color: dodgerblue;
+}
+
+span {
+  color: red;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 130px;
+  background-color: rgb(255, 255, 255);
+  /* display: flex; */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index:999;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+.topbar_main{
+  display: flex;
+
+}
+
+.navbar .links {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .loggedInContainer {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 25px;
+}
+a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.navbar h3 {
+  text-align: right;
+  color: white;
+  font-weight: lighter;
+}
+
+/* INDIVIDUAL POST */
+.postPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSide {
+  flex: 50%;
+  height: calc(70vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.rightSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.rightSide .addCommentContainer {
+  flex: 20%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+ 
+}
+
+.addCommentContainer input,
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 90px;
+}
+
+
+
+/* .addCommentContainer button {
+  background-color: dodgerblue;
+  color: white;
+  width: 170px;
+} */
+
+.addCommentContainer input {
+  border: 2px solid dodgerblue;
+  width: 400px;
+}
+
+.rightSide .listOfComments {
+  flex: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listOfComments .comment {
+  width: 70%;
+  height: auto;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#individual {
+  height: 300px;
+  width: 80%;
+}
+
+#individual .title,
+#individual .footer {
+  font-size: 25px;
+}
+
+#individual .body {
+  font-size: 20px;
+}
+
+.deletePersonalcomment{
+  float: right;
+  cursor: pointer;
+  color: blue;
+  
+}
+
+.deletePosterscomment{
+  margin-top: 90px;
+  cursor: pointer;
+  color: orange;
+ 
+}
+
+/* LOGIN */
+
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+  height: 100vh;
+  z-index: 999;
+}
+
+.loginContainer input
+ {
+  width: 30%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+}
+
+.loginContainer button {
+  width: 30%;
+  height:40px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.loginContainer input {
+  border: 2px solid dodgerblue;
+}
+
+.imagelogin{
+  width: 100%;
+  height: 70%;
+}
+
+/**signup image icon*/
+.imagesignup{
+  width: 50%;
+  height: 30%;
+}
+
+.container{
+  display: flex;
+  margin: 10px;
+  
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+
+
+}
+
+.home{
+  flex: 4;
+}
+
+.homeWidgets{
+  display: flex;
+  margin: 20px;
+}
+
+.featured{
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.featuredinfo{
+flex: 1;
+margin: 0px 20px;
+height: 150%;
+padding: 30px;
+border-radius: 10px;
+cursor: pointer;
+-webkit-box-shadow: 0px 0px 11px -1px #9b8989;
+box-shadow: 0px 0px 11px #9b8989;
+}
+
+
+.othersHome {
+  flex:4;
+  
+}
+
+.account {
+    margin-right: 5px;
+    font-size: 35px !important;
+    color: white;
+}
+.RegisterStatement{
+  color: blue;
+}
+.RegisterColor{
+  color: yellow;
+}
+
+.postPage{
+flex: 4;
+}
+.postlayout{
+  display: flex;
+  margin: 20px;
+  width: 100%;
+}
+
+/*Email recovery option */
+
+.EmailRecoveryOption{
+  margin-top: 10px;
+  margin-left: 30%;
+}
+
+/* top second navbar header */
+.inlineNav{
+  height: 10%;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ /* color:aliceblue; */
+
+}
+
+.active{
+  color: orange;
+ 
+}
+
+.fixed{
+  position: fixed;
+}
+
+.searchKholabar{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+
+.navbar .links {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+} */
+
+.homesearchContainer{
+  flex: 1;
+  height: 70px;
+  margin: 0px 20px;
+  padding: 15px;
+  position: sticky;
+  border-radius: 5px;
+  /* border-radius: 10px; */
+  -webkit-box-shadow: 0px 0px 11px -1px #ccdcf1;
+  box-shadow: 0px 0px 11px #e0e7f8;
+  }
+
+  .basicInfo{
+    width: 100%;
+    
+  }
+
+.topbarIconContainer{
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #555;
+}
+
+.topIconBadge{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background-color: rgb(14, 11, 11);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+
+}
+
+/* logout pop up and profile */
+.popup {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  color: blue;
+  align-items: center;
+  border-radius: 10px;
+  margin: 4;
+}
+
+.popup.active,
+.popup:hover {
+  background-color: rgba(233, 210, 180, 0.582);
+}
+/* style={{color: "blue",display: "flex", margin: "4"}} */
+
+.backArrow{
+display: flex;
+cursor: pointer;
+}
+
+.Layout{
+  margin: 5px;
+  
+}
