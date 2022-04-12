@@ -34,7 +34,7 @@ function Login() {
     console.log(data);
     axios.post("https://windowshoppingserver.herokuapp.com/shop/login", data).then((response) => {
       if (response.data.error) {
-        alert(response.data.error);
+        alert("shop name and password do not match");
       } else {
         localStorage.setItem("accessToken", response.data.token);
         localStorage.setItem("id", response.data.id);
