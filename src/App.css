@@ -342,7 +342,7 @@ button {
 }
 
 .container{
-  display: flex;
+  display:flow-root;
   margin: 10px;
   
 }

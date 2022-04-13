@@ -18,6 +18,7 @@ import SupplierMarket from "./pages/supplierMarket/SupplierMarket";
 import SupplierProducts from "./pages/supplierProducts/SupplierProducts";
 import SupplierSProduct from "./pages/supplierSproduct/SupplierSProduct";
 import TopbarSupplier  from "./components/topbarSupplier/TopbarSupplier";
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -143,7 +144,7 @@ useEffect(()=> {
             <div className="links">
             {!authState.status ? (
                 <> 
-                <h1>WELCOME TO WINDOW SHOPPING</h1>
+                <li><Typography variant="h5"><h5>WELCOME TO WINDOW SHOPPING</h5></Typography></li>
                 
                   <Link to="/login"><h5 style={{color:"blue"}}> CLICK TO GET STARTED </h5></Link>
                   

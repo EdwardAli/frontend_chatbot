@@ -8,9 +8,14 @@ import User from '../image/login.jpg';
 import Input from '@mui/material/Input';
 import { SearchOutlined } from '@material-ui/icons';
 import {  ArrowBackIos, ArrowBack } from "@material-ui/icons";
+import { Grid,Paper, Avatar, TextField, Button, Typography } from '@material-ui/core'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
 function Login() {
+  const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
+  const avatarStyle={backgroundColor:'#1bbd7e'}
+  const btnstyle={margin:'8px 0'}
   const [shopName, setShopName] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthState } = useContext(AuthContext);
@@ -57,37 +62,27 @@ function Login() {
     });
   };
   return (
-    <div className="forum">
-   <div className="loginContainer"> 
-  
-        <h1>Login</h1>
-           <div className="loginContainer">
-      <label>Shop Name:</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setShopName(event.target.value);
-        }}
-      />
-      <label>Password:</label>
-      <input
-        type="password"
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
+    <Grid>
+      <Paper elevation={10} style={paperStyle}>
+      <Grid align='center'>
+                     <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
+                     <h2>Login</h2>
+                      </Grid>
+        <TextField label='Shopname' placeholder='Enter shopname' fullWidth required onChange={(event) => {setShopName(event.target.value);}}/>
+        <TextField label='Password' placeholder='Enter password' type='password' fullWidth required onChange={(event) => {setPassword(event.target.value);}}/>
+        <Button type='submit' color='primary' variant="contained" onClick={login} style={btnstyle} fullWidth>Login</Button>
+        <Button type='submit' color='primary' variant="contained" onClick={register} style={btnstyle} fullWidth>Register</Button>
 
-      <button onClick={login}> Login </button>
+      
        {/* ********************************** * */}
       
  {/* *************************************       */}
-      <button onClick={register}> Register </button>
+ 
 
     
-     </div>
-    </div>
-    </div>
     
+    </Paper>
+    </Grid>
   );
 }
 
