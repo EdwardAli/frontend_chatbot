@@ -79,11 +79,12 @@ const NewProduct = () =>{
       navigate("/supplier");
     });
   };
+
   return (
     <div className="home" >
-       <div style={{margin: "10px",marginTop: "8vh"}}>
+       <div style={{marginLeft: "10vh",marginTop: "8vh"}}>
          <span>
-            <TextField style={{margin: "10px",marginTop: "8vh", marginLeft: "10vh",backgroundColor: "#fafafa"}}
+            <TextField style={{marginTop: "8vh", marginLeft: "10vh",backgroundColor: "#fafafa"}}
               onChange={(e) => setSearchTitle(e.target.value)}
                 variant="outlined"
                 placeholder="(Search Product)"
@@ -135,7 +136,9 @@ const NewProduct = () =>{
                         <td><a onClick={() => {            
                             navigate("/SupplierSProduct");
                             localStorage.setItem("shopItemId", JSON.stringify(value.id))}}>Edit</a></td>
-                        <td><a onClick={deleteProduct(value.id)} >Delete</a></td>
+                        <td><a onClick={
+                            navigate("/SupplierSProduct");
+                            localStorage.setItem("shopItemId", JSON.stringify(value.id))}} >Delete</a></td>
                       </tr>
                     
                 </tr>
