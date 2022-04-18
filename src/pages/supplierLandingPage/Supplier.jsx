@@ -67,19 +67,6 @@ const NewProduct = () =>{
   navigate("/supplierProducts");
 };
 
-
-  //deleting the product 
- function deleteProduct (shopID){
-  var shopItemId = shopID;
-  axios
-    .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${shopItemId}`, {
-      headers: { accessToken: localStorage.getItem("accessToken") },
-    })
-    .then(() => {
-      navigate("/supplier");
-    });
-  };
-
   return (
     <div className="home" >
        <div style={{marginLeft: "10vh",marginTop: "8vh"}}>
@@ -136,9 +123,9 @@ const NewProduct = () =>{
                         <td><a onClick={() => {            
                             navigate("/SupplierSProduct");
                             localStorage.setItem("shopItemId", JSON.stringify(value.id))}}>Edit</a></td>
-                        <td><a onClick={
-                            navigate("/SupplierSProduct");
-                            localStorage.setItem("shopItemId", JSON.stringify(value.id))}} >Delete</a></td>
+                        <td><a onClick={()=>{
+                            navigate("/delete");
+                            localStorage.setItem("shopItemId", JSON.stringify(value.id))}}> Delete</a></td>
                       </tr>
                     
                 </tr>
