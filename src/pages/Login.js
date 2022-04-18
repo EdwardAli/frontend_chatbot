@@ -2,20 +2,15 @@ import React, { useState, useContext, useEffect} from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-import { styled } from '@mui/material/styles';
-import R from '../image/IMG-20220120-WA0010.png';
-import User from '../image/login.jpg';
-import Input from '@mui/material/Input';
-import { SearchOutlined } from '@material-ui/icons';
-import {  ArrowBackIos, ArrowBack } from "@material-ui/icons";
-import { Grid,Paper, Avatar, TextField, Button, Typography } from '@material-ui/core'
+import { Grid,Paper, Avatar, TextField, Button } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
 function Login() {
-  const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
+  const paperStyle={padding :20,height:'70vh', width: 380, margin:" 10px auto"}
+  const textfieldStyle={fontSize:30, margin:'8px 0', padding: 5}
   const avatarStyle={backgroundColor:'#1bbd7e'}
-  const btnstyle={margin:'8px 0'}
+  const btnstyle={margin:'8px 0',padding: 5, color:"white"}
   const [shopName, setShopName] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthState } = useContext(AuthContext);
@@ -23,9 +18,6 @@ function Login() {
 
   let navigate = useNavigate();
 
-  const back = () => {
-    navigate("/web");
-};
 
   const register = () => {
         navigate("/registration");
@@ -62,27 +54,19 @@ function Login() {
     });
   };
   return (
-    <Grid>
+    <center>
       <Paper elevation={10} style={paperStyle}>
+      <h3>Welcome to Window Shopping</h3>
       <Grid align='center'>
-                     <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
-                     <h2>Login</h2>
-                      </Grid>
-        <TextField label='Shopname' placeholder='Enter shopname' fullWidth required onChange={(event) => {setShopName(event.target.value);}}/>
-        <TextField label='Password' placeholder='Enter password' type='password' fullWidth required onChange={(event) => {setPassword(event.target.value);}}/>
+        <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
+          <h2>Login</h2>
+      </Grid>
+        <TextField label='Shopname' style={textfieldStyle} placeholder='Enter shopname' variant="outlined" fullWidth required onChange={(event) => {setShopName(event.target.value);}}/>
+        <TextField label='Password' style={textfieldStyle} placeholder='Enter password' variant="outlined" type='password' fullWidth required onChange={(event) => {setPassword(event.target.value);}}/>
         <Button type='submit' color='primary' variant="contained" onClick={login} style={btnstyle} fullWidth>Login</Button>
         <Button type='submit' color='primary' variant="contained" onClick={register} style={btnstyle} fullWidth>Register</Button>
-
-      
-       {/* ********************************** * */}
-      
- {/* *************************************       */}
- 
-
-    
-    
-    </Paper>
-    </Grid>
+      </Paper>
+    </center>
   );
 }
 

@@ -71,7 +71,7 @@ const NewProduct = () =>{
            
            <br/><br/>
            <button onClick={NewProduct}> Add New Product</button>
-           <TextField style={{margin: "10px", backgroundColor: "#fafafa"}}
+           <TextField style={{margin: "20px", backgroundColor: "#fafafa"}}
           onChange={(e) => setSearchTitle(e.target.value)}
                
                 id="standard-bare"

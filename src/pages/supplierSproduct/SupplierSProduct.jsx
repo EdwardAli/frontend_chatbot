@@ -101,48 +101,48 @@ const deleteProduct = () => {
   
   return (
  //login page forms
- <div className="Container"> 
- <h1>Edit/Delete Product</h1>
- 
-    <div className="Container">
-<label>Name:</label>
-<input
- type="text"
- value={Name}
- onChange={(e)=>{setName(e.target.value)}}
-/>
-<label>Desription:</label>
-<input
- type="text"
- value={Description}
- onChange={(e)=>{setDescription(e.target.value)}}
-/>
-<label>Category:</label>
-<input
- type="text"
- value={Quantity}
- onChange={(e)=>{setQuantity(e.target.value)}}
-/>
-<label>Price:</label>
-<input
- type="number"
- value={Price}
- onChange={(e)=>{setPrice(e.target.value)}}
-/>
-<input
- type="text"
- value={Shop}
- onChange={(e)=>{setShop(e.target.value)}}
-/>
+    <div className="Container cont"> 
+        <h1>Edit/Delete Product</h1>
+        
+            <div className="Container">
+        <label>Name:</label>
+        <input
+        type="text"
+        value={Name}
+        onChange={(e)=>{setName(e.target.value)}}
+        />
+        <label>Desription:</label>
+        <input
+        type="text"
+        value={Description}
+        onChange={(e)=>{setDescription(e.target.value)}}
+        />
+        <label>Category:</label>
+        <input
+        type="text"
+        value={Quantity}
+        onChange={(e)=>{setQuantity(e.target.value)}}
+        />
+        <label>Price:</label>
+        <input
+        type="number"
+        value={Price}
+        onChange={(e)=>{setPrice(e.target.value)}}
+        />
+        <input
+        type="text"
+        value={Shop}
+        onChange={(e)=>{setShop(e.target.value)}}
+        />
 
 
-<button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
-<button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
-   {/* ********************************** * */}
-   
-{/* *************************************       */}
-</div>
-</div>
+        <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
+        <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
+          {/* ********************************** * */}
+          
+        {/* *************************************       */}
+        </div>
+    </div>
   );
 }
 

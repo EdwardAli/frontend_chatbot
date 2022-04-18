@@ -144,10 +144,7 @@ useEffect(()=> {
             <div className="links">
             {!authState.status ? (
                 <> 
-                <li><Typography variant="h5"><h5>WELCOME TO WINDOW SHOPPING</h5></Typography></li>
-                
-                  <Link to="/login"><h5 style={{color:"blue"}}> CLICK TO GET STARTED </h5></Link>
-                  
+                 
                 </>
               ) : (
                 <>
@@ -175,7 +172,7 @@ useEffect(()=> {
         BackdropComponent={Backdrop}>
         <Box sx={style}>
         
-        <Link to="/web">
+        <Link to="/">
       
        <p onClick={logout} className="popup"><PowerSettingsNewOutlined/>Logout</p>
        </Link>
@@ -194,7 +191,7 @@ useEffect(()=> {
         <div className="container">
        <Routes>
           <Route path="/registration" exact element={<Registration/>} />
-          <Route path="/login" exact element={<Login/>} />
+          <Route path="/" exact element={<Login/>} />
         <Route element={<AdminLayout/>}>  
         <Route path="/supplier" exact element={<Supplier/>} />
         <Route path="/supplierProducts" exact element={<SupplierProducts/>} />
