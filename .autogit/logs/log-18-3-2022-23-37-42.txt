@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 18 2022 23:37:42 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/pages/supplierLandingPage/Supplier.jsx
+
+
+Created files:
+* .autogit/logs/log-18-3-2022-22-38-5.txt
+* src/pages/supplierLandingPage/DeProduct.js
+
+
+Deleted files:
+* src/pages/supplierLandingPage/delete.js
+
+
+Renamed files:

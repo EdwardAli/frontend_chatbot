@@ -125,7 +125,7 @@ const NewProduct = () =>{
                             localStorage.setItem("shopItemId", JSON.stringify(value.id))}}>Edit</a></td>
                         <td><a onClick={()=>{
                             navigate("/delete");
-                            localStorage.setItem("shopItemId", JSON.stringify(value.id))}}> Delete</a></td>
+                            localStorage.setItem("shopId", JSON.stringify(value.id))}}> Delete</a></td>
                       </tr>
                     
                 </tr>

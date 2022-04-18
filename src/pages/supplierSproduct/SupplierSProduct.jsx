@@ -7,6 +7,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import {  Link } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useParams, useNavigate } from "react-router-dom";
 import {  TextField, IconButton } from '@material-ui/core';
 import {  DeleteOutline, EditOutlined, SearchOutlined  } from "@material-ui/icons";
@@ -66,7 +67,7 @@ function SupplierSProduct() {
       });
   }, []);
 
-  //updating the khola info
+  //updating the prodcts info
 const updateProduct = () => {
 
   // data to be updated crucial
@@ -87,6 +88,19 @@ const data = {
     });
 };
 
+const deleteProduct =()=>{
+  
+    var shopItemId = localStorage.getItem('shopItemId');
+     axios
+       .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${shopItemId}`, {
+         headers: { accessToken: localStorage.getItem("accessToken") },
+       })
+       .then(() => {
+         navigate("/supplier");
+       });
+   
+}
+
 
   
   return (
@@ -94,32 +108,34 @@ const data = {
     <div className="Container cont"> 
         <h1>Edit/Delete Product</h1>
         
-            <div className="Container">
-        <label>Name:</label>
-        <input
-        type="text"
-        value={Name}
-        onChange={(e)=>{setName(e.target.value)}}
+        <div className="Container">
+        
+        <Field as ={TextField}
+          style={fieldStyle}
+          label="Product Name"
+          placeholder={Name}
+          value={Name}
+          onChange={(e)=>{setName(e.target.value)}}
         />
         <label>Desription:</label>
-        <input
+        <Field as ={TextField}
         type="text"
         value={Description}
         onChange={(e)=>{setDescription(e.target.value)}}
         />
         <label>Category:</label>
-        <input
+        <Field as ={TextField}
         type="text"
         value={Quantity}
         onChange={(e)=>{setQuantity(e.target.value)}}
         />
         <label>Price:</label>
-        <input
+        <Field as ={TextField}
         type="number"
         value={Price}
         onChange={(e)=>{setPrice(e.target.value)}}
         />
-        <input
+        <Field as ={TextField}
         type="text"
         value={Shop}
         onChange={(e)=>{setShop(e.target.value)}}
@@ -127,6 +143,7 @@ const data = {
 
 
         <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
+        <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
         
           {/* ********************************** * */}
           

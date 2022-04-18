@@ -19,7 +19,6 @@ import SupplierProducts from "./pages/supplierProducts/SupplierProducts";
 import SupplierSProduct from "./pages/supplierSproduct/SupplierSProduct";
 import TopbarSupplier  from "./components/topbarSupplier/TopbarSupplier";
 import { Typography } from '@material-ui/core';
-import DeProduct from "./pages/supplierLandingPage/DeProduct";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -198,8 +197,7 @@ useEffect(()=> {
           <Route path="/supplierProducts" exact element={<SupplierProducts/>} />
           <Route path="/supplierSProduct" exact element={<SupplierSProduct/>} />
           <Route path="/supplierMarket" exact element={<SupplierMarket/>} />
-          <Route path="/del" exact element={<DeProduct/>}/>
-
+          
         </Route>
        </Routes>
        </div>
