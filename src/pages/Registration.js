@@ -5,6 +5,7 @@ import { Grid, Paper, Avatar, TextField, Button } from '@material-ui/core'
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import * as Yup from "yup";
 import axios from "axios";
+import '../pages/Registration.css'
 
 function Registration() {
   const avatarStyle = { backgroundColor: '#1bbd7e' }
@@ -113,9 +114,9 @@ function Registration() {
               helperText={<ErrorMessage name="comfirmPassword" component="span" />}
             />
 
-            <div>
-              <button type="submit"> Register</button>
-              <Link to="/"><p className="RegisterStatement" style={{color: 'orangered'}}>Already registered? go to login</p></Link>
+            <div className="">
+              <Button className="" type="submit"> Register</Button>
+              <Link to="/" className=""><p className="RegisterStatement" style={{color: 'orangered'}}>Already registered? | Home</p></Link>
             </div>
           </Form>
         </Formik>

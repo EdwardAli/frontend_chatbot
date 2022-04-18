@@ -45,7 +45,7 @@ function SupplierMarket() {
   const [searchTitle, setSearchTitle] = useState("");
   let navigate = useNavigate();
 
-
+  let count = 1;
  // getting list of user products based on user id /product/All
   useEffect(() => { 
  
@@ -59,10 +59,7 @@ function SupplierMarket() {
 
   return (
     <div className="home"> 
-         
-           <br/>
-           
-       
+                
           <TextField style={{margin: "10px", backgroundColor: "#fafafa"}}
           onChange={(e) => setSearchTitle(e.target.value)}
                
@@ -79,40 +76,48 @@ function SupplierMarket() {
               />
               <hr/>
             
-    
-<div className="cards-container">
-
-{products.filter((value) => {
-           if (searchTitle === "") {
-             return value;
-           } else if (
-             value.Name?.toLowerCase().includes(searchTitle.toLowerCase())
-           ) {
-             return value;
-           }
-         }).map((value, key) => {
- return (
-
- <div key={key} className="card">
-           <div className="card__title">{value.Name} </div>
-           <div className="card__body"
-           onClick={() => {
+          
+      <table className="">
+          <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Description</th>
+                <th>Shop</th>
                 
-            localStorage.setItem("orderId", JSON.stringify(value.ProductId))
-           }}>
-           <p className="breedname">{value.Description} </p>
-           <p className="breedname" style={{color: "blue"}}>{value.Quantity} </p>
-           <p className="breedname" style={{color: "orange"}}>MK: {value.Price} </p>
-           <div className="card__image">Shop: {value.Shop}</div>
+              </tr>
+          </thead>
+          <tbody>
+              {products.filter((value) => {
+                    if (searchTitle === "") {
+                      return value;
+                     } else if (
+                      value.Name?.toLowerCase().includes(searchTitle.toLowerCase())
+                    ) {
+                      return value;
+                    }
+                  }).map((value, key) => {
+              return (
+                <tr onClick={() => {
+                  localStorage.setItem("orderId", JSON.stringify(value.ProductId))
+                }}>
+                  <th>{key+1}</th>
+                  <td>{value.Name}</td>
+                  <td>MK: {value.Price}</td>
+                  <td>{value.Quantity}</td>
+                  <td>{value.Description}</td>
+                  <td>{value.Shop}</td>
+                </tr>
+                );
+              })}
 
-           </div>
-
-       </div>
-
-       );
-     })}
-</div>
+          </tbody>
+         
+      </table>
      </div>
+     
     
   );
 }

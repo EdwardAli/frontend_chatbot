@@ -87,17 +87,7 @@ const data = {
     });
 };
 
-//deleting the product 
-const deleteProduct = () => {
-  var shopItemId = localStorage.getItem('shopItemId');
-  axios
-    .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${shopItemId}`, {
-      headers: { accessToken: localStorage.getItem("accessToken") },
-    })
-    .then(() => {
-      navigate("/supplier");
-    });
-  };
+
   
   return (
  //login page forms
@@ -137,7 +127,7 @@ const deleteProduct = () => {
 
 
         <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
-        <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
+        
           {/* ********************************** * */}
           
         {/* *************************************       */}

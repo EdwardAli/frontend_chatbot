@@ -1,0 +1,10 @@
+.buttons{
+    position: relative;
+    display: inline;
+    padding : 20px
+}
+.buttons .li{
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+}

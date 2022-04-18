@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import {  Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
-import {  TextField, IconButton } from '@material-ui/core';
+import {  TextField, IconButton, Table } from '@material-ui/core';
 import {  DeleteOutline, EditOutlined, SearchOutlined  } from "@material-ui/icons";
 import './supplier.css';
 
@@ -53,6 +53,7 @@ function Supplier() {
     }
   }, []);
 
+
  // getting list of user products based on user id 
   useEffect(() => { 
   var id = localStorage.getItem('id');
@@ -66,14 +67,25 @@ const NewProduct = () =>{
   navigate("/supplierProducts");
 };
 
+
+  //deleting the product 
+ function deleteProduct (shopID){
+  var shopItemId = shopID;
+  axios
+    .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${shopItemId}`, {
+      headers: { accessToken: localStorage.getItem("accessToken") },
+    })
+    .then(() => {
+      navigate("/supplier");
+    });
+  };
   return (
     <div className="home" >
            
            <br/><br/>
            <button onClick={NewProduct}> Add New Product</button>
            <TextField style={{margin: "20px", backgroundColor: "#fafafa"}}
-          onChange={(e) => setSearchTitle(e.target.value)}
-               
+              onChange={(e) => setSearchTitle(e.target.value)}
                 id="standard-bare"
                 variant="outlined"
                 placeholder="(Search Product)"
@@ -88,39 +100,53 @@ const NewProduct = () =>{
            
               <hr/>
     
- <div className="cards-container">
+        <table className="">
 
- {products.filter((value) => {
-            if (searchTitle === "") {
-              return value;
-            } else if (
-              value.Name?.toLowerCase().includes(searchTitle.toLowerCase())
-            ) {
-              return value;
-            }
-          }).map((value, key) => {
-  return (
-     
-  <div key={key} className="card" style={{background: "#b8b5bd"}}>
-     <div  onClick={() => {            
-    navigate("/SupplierSProduct");
-    localStorage.setItem("shopItemId", JSON.stringify(value.id))
-   }}>
-            <div className="card__title">{value.Name} </div>
-            <div className="card__body">
-            <p className="breedname" style={{color: "blue"}}>{value.Quantity} </p>
-            <p className="breedname">{value.Description} </p>
-            <p className="breedname" style={{color: "#a62703"}}>MK: {value.Price} </p>
-            <p className="breedname" style={{fontWeight: "bold"}}>Shop:{value.Shop} </p>
-           
-            </div>
-           </div>
-        </div>
+         
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Description</th>
+              <th>Shop</th>
+              <th>Action</th>
+            </tr>
+          
+          <tbody>
+              {products.filter((value) => {
+                      if (searchTitle === "") {
+                         return value;
+                      } else if (
+                        value.Name?.toLowerCase().includes(searchTitle.toLowerCase())
+                      ) {
+                        return value;
+                      }
+                    }).map((value, key) => {
+             return (
+              
+                <tr  >
+                      <th>{key+1}</th>
+                      <td>{value.Name}</td>
+                      <td>MK: {value.Price}</td>
+                      <td>{value.Quantity}</td>
+                      <td>{value.Description}</td>
+                      <td>{value.Shop}</td>
+                      <tr>
+                        <td><a onClick={() => {            
+                            navigate("/SupplierSProduct");
+                            localStorage.setItem("shopItemId", JSON.stringify(value.id))}}>Edit</a></td>
+                        <td><a onClick={deleteProduct(value.id)} >Delete</a></td>
+                      </tr>
+                    
+                </tr>
+                
+                    );
+                  })}
+            </tbody>
+         
 
-        );
-      })}
-
-</div>
+        </table>
 
      </div>
    

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field,TextField, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -53,7 +53,7 @@ function SupplierProducts() {
   };
 
   return (
-    <div className="createPostPage">
+    <center className="createPostPage">
       <p>Fill in</p>
       <Formik
         initialValues={initialValues}
@@ -104,7 +104,7 @@ function SupplierProducts() {
     
         </Form>
       </Formik>
-    </div>
+    </center>
   );
 }
 
