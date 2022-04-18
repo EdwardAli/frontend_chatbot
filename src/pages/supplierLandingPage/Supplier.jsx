@@ -81,12 +81,10 @@ const NewProduct = () =>{
   };
   return (
     <div className="home" >
-           
-           <br/><br/>
-           <button onClick={NewProduct}> Add New Product</button>
-           <TextField style={{margin: "20px", backgroundColor: "#fafafa"}}
+       <div style={{margin: "10px",marginTop: "8vh"}}>
+         <span>
+            <TextField style={{margin: "10px",marginTop: "8vh", marginLeft: "10vh",backgroundColor: "#fafafa"}}
               onChange={(e) => setSearchTitle(e.target.value)}
-                id="standard-bare"
                 variant="outlined"
                 placeholder="(Search Product)"
                 InputProps={{
@@ -96,10 +94,11 @@ const NewProduct = () =>{
                     </IconButton>
                   ),
                 }}
-              />     
-           
-              <hr/>
-    
+              /> 
+            <button onClick={NewProduct} style={{marginTop: "8vh", marginLeft:"80vh"}}> Add New Product</button>
+         </span>
+       </div>
+       <hr/>
         <table className="">
 
          

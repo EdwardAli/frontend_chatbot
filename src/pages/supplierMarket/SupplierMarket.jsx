@@ -60,7 +60,7 @@ function SupplierMarket() {
   return (
     <div className="home"> 
                 
-          <TextField style={{margin: "10px", backgroundColor: "#fafafa"}}
+          <TextField style={{margin: "10px",marginTop: "8vh", backgroundColor: "#fafafa"}}
           onChange={(e) => setSearchTitle(e.target.value)}
                
                 id="standard-bare"
