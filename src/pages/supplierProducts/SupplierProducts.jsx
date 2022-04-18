@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Formik, Form, Field,TextField, ErrorMessage } from "formik";
+import { Formik, Form, Field,ErrorMessage } from "formik";
+import { Grid, Paper, Avatar, TextField, Button } from '@material-ui/core'
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -61,46 +62,39 @@ function SupplierProducts() {
         validationSchema={validationSchema}
       >
         <Form className="formContainer">
-          <label>Name: </label>
-          <ErrorMessage name="Name" component="span" />
-          <Field
+         
+          <Field  as={TextField}
             autocomplete="off"
-            id="inputCreatePost"
-            name="Name" 
-          />
-           <label>Quantity: </label>
-          <ErrorMessage name="Category" component="span" />
-          <Field
+            label="Product Name"
+            placeholder="Enter your product name"
+            name="Name"
+            helperText={<ErrorMessage name="Name" component="span" />}/>
+           
+          
+          <Field  as={TextField}
             autocomplete="off"
-            id="inputCreatePost"
+            label="Quantity"
+            placeholder="Quantity"
             name="Quantity"
-            >
-           
-          </Field>
-
-
-          <label>Description: </label>
-          <ErrorMessage name="Description" component="span" />
-          <Field
+            helperText ={<ErrorMessage name="Quantity" component="span" />}
+            />
+          <Field as = {TextField}
             autocomplete="off"
-            id="inputCreatePost"
+            label="Description"
+            placeholder="Enter product description"
             name="Description"
-          />
-           
-  
-          <label>Price: </label>
-          <ErrorMessage name="Price" component="span" />
-          <Field
+            helperText={<ErrorMessage name="Description" component="span" />}/>
+          
+          <Field as ={TextField}
             autocomplete="off"
-            id="inputCreatePost"
+            label="Price"
+            placeholder="Enter Product Price"
             name="Price"
             type="number"
-          />
+           helperText={<ErrorMessage name="Price" component="span" />}/>
           
           <button type="submit" style={{cursor: "pointer"}}> Add</button>
-          {/* ********************************** * */}
         
- {/* *************************************       */}
     
         </Form>
       </Formik>
