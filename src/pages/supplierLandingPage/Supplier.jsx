@@ -10,6 +10,8 @@ import {  Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import {  TextField, IconButton, Table } from '@material-ui/core';
 import {  DeleteOutline, EditOutlined, SearchOutlined  } from "@material-ui/icons";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import './supplier.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +44,7 @@ function Supplier() {
   const classes = useStyles();
   const [products, setProducts] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
+
   let navigate = useNavigate();
   
 
@@ -63,6 +66,34 @@ function Supplier() {
         
     });
 }, []);
+
+//delete
+var myID;
+const clickeME = () => {
+
+  confirmAlert({
+    title: 'Detele a product',
+    message: 'Are you sure to do delete?',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => {
+            axios
+              .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${myID}`, {
+                headers: { accessToken: localStorage.getItem("accessToken") },
+              })
+              .then(() => {
+                window.location.reload(false);
+              });
+          }
+      },
+      {
+        label: 'No',
+        onClick: () => {}
+      }
+    ]
+  });
+}
 const NewProduct = () =>{
   navigate("/supplierProducts");
 };
@@ -110,6 +141,7 @@ const NewProduct = () =>{
                         return value;
                       }
                     }).map((value, key) => {
+                      myID = value.id
              return (
               
                 <tr  >
@@ -123,9 +155,7 @@ const NewProduct = () =>{
                         <td ><a className="aEdit" onClick={() => {            
                             navigate("/SupplierSProduct");
                             localStorage.setItem("shopItemId", JSON.stringify(value.id))}}>Edit</a></td>
-                        <td><a className="aDelete" onClick={()=>{
-                            navigate("/delete");
-                            localStorage.setItem("shopId", JSON.stringify(value.id))}}> Delete</a></td>
+                        <td><a className="aDelete" onClick={clickeME}> Delete</a></td>
                       </tr>
                     
                 </tr>

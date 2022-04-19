@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SupplierSProduct() {
-  const [ Name, setName] = useState('');
-  const [ Quantity, setQuantity] = useState('');
-  const [ Description, setDescription] = useState('');
-  const [ Price, setPrice] = useState('');
-  const [ Shop, setShop] = useState('');
+  const [ name, setName] = useState('');
+  const [ quantity, setQuantity] = useState('');
+  const [ description, setDescription] = useState('');
+  const [ price, setPrice] = useState('');
+  const [ shop, setShop] = useState('');
   const fieldStyle={fontSize:30, margin:'4px 0', padding: 5}
   let navigate = useNavigate();
   
@@ -50,8 +50,7 @@ function SupplierSProduct() {
  useEffect(() => { 
     var ProductId = localStorage.getItem('id');
       axios.get(`https://windowshoppingserver.herokuapp.com/product/byId/${ProductId}`).then((response) => {
-          console.log(response.data);
-           // console.log(response.data.Name);
+          
           setName(response.data.Name);
            // console.log(response.data.AnimalType);
           setDescription(response.data.Description);
@@ -69,11 +68,11 @@ const updateProduct = () => {
 
   // data to be updated crucial
 const data = {
-  Name: Name,
-  Description: Description,
-  Quantity: Quantity,
-  Price: Price,
-  Shop: Shop
+  Name: name,
+  Description: description,
+  Quantity: quantity,
+  Price: price,
+  Shop: shop
  
 }
 ///product/update/:id
@@ -85,65 +84,43 @@ const data = {
     });
 };
 
-const deleteProduct =()=>{
-  
-    var shopItemId = localStorage.getItem('shopItemId');
-     axios
-       .delete(`https://windowshoppingserver.herokuapp.com/product/delete/${shopItemId}`, {
-         headers: { accessToken: localStorage.getItem("accessToken") },
-       })
-       .then(() => {
-         navigate("/supplier");
-       });
-   
-}
 
-
-  
   return (
  //login page forms
     <Grid>
         <Paper className="Container cont"> 
-          <h1>Edit/Delete Product</h1>
+          <h1>Edit Product</h1>
             
           <div className="Container">
             <label>Name:</label>
             <input
               label="Name"
               style={fieldStyle}
-              value={Name}
+              value={name}
               onChange={(e)=>{setName(e.target.value)}}
             />
             <label>Desription:</label>
             <input
             type="text"
-            value={Description}
+            value={description}
             onChange={(e)=>{setDescription(e.target.value)}}
             />
             <label>Quantity:</label>
             <input
-            type="text"
-            value={Quantity}
-            onChange={(e)=>{setQuantity(e.target.value)}}
+              type="text"
+              value={quantity}
+              onChange={(e)=>{setQuantity(e.target.value)}}
             />
             <label>Price:</label>
             <input
-            type="number"
-            value={Price}
-            onChange={(e)=>{setPrice(e.target.value)}}
+              type="number"
+              value={price}
+              onChange={(e)=>{setPrice(e.target.value)}}
             />
-            <input
-            type="hidden"
-            value={Shop}
-            onChange={(e)=>{setShop(e.target.value)}}
-            />
+            
 
             <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
-            <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
-            
-              {/* ********************************** * */}
-              
-            {/* *************************************       */}
+           
             </div>
         </Paper>
     </Grid>
