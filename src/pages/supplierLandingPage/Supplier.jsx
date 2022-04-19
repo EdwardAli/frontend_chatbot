@@ -127,7 +127,7 @@ const NewProduct = () =>{
               <th>Price</th>
               <th>Quantity</th>
               <th>Description</th>
-              <th>Shop</th>
+              <th></th>
               <th>Action</th>
             </tr>
           
@@ -150,7 +150,7 @@ const NewProduct = () =>{
                       <td>MK {value.Price}</td>
                       <td>{value.Quantity}</td>
                       <td>{value.Description}</td>
-                      <td>{value.Shop}</td>
+                      <td></td>
                       <tr>
                         <td ><a className="aEdit" onClick={() => {            
                             navigate("/SupplierSProduct");

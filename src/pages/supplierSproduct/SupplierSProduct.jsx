@@ -49,8 +49,9 @@ function SupplierSProduct() {
  // getting list of user products based on user id 
  useEffect(() => { 
     var ProductId = localStorage.getItem('id');
-      axios.get(`https://windowshoppingserver.herokuapp.com/product/byId/${ProductId}`).then((response) => {
-          
+      axios.get(`https://windowshoppingserver.herokuapp.com/product/byId/${ProductId}`)
+        .then((response) => {
+          console.log(response.data)
           setName(response.data.Name);
            // console.log(response.data.AnimalType);
           setDescription(response.data.Description);
@@ -75,6 +76,7 @@ const data = {
   Shop: shop
  
 }
+console.log(name)
 ///product/update/:id
   var shopItemId = localStorage.getItem('shopItemId');
   axios
