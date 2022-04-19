@@ -115,15 +115,15 @@ const NewProduct = () =>{
                 <tr  >
                       <th>{key+1}</th>
                       <td>{value.Name}</td>
-                      <td>MK: {value.Price}</td>
+                      <td>MK {value.Price}</td>
                       <td>{value.Quantity}</td>
                       <td>{value.Description}</td>
                       <td>{value.Shop}</td>
                       <tr>
-                        <td><a onClick={() => {            
+                        <td ><a className="aEdit" onClick={() => {            
                             navigate("/SupplierSProduct");
                             localStorage.setItem("shopItemId", JSON.stringify(value.id))}}>Edit</a></td>
-                        <td><a onClick={()=>{
+                        <td><a className="aDelete" onClick={()=>{
                             navigate("/delete");
                             localStorage.setItem("shopId", JSON.stringify(value.id))}}> Delete</a></td>
                       </tr>

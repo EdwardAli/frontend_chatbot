@@ -33,85 +33,53 @@
     justify-content: center;
     
 }
+/* Collapse all borders separating each cell. Table takes up entire width of .app. Set gray shadow around table */
 table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    table-layout: fixed;
-  }
-  
-  table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
-  }
-  
-  table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: .35em;
-  }
-  table a{
-    color: blue;
-    cursor: pointer;
-  }
-  
-  table th,
-  table td {
-    padding: .625em;
-    text-align: center;
-  }
-  
-  table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-  
-  @media screen and (max-width: 600px) {
-    table {
-      border: 0;
-    }
-  
-    table caption {
-      font-size: 1.3em;
-    }
-    
-    table thead {
-      border: none;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-    
-    table tr {
-      border-bottom: 3px solid #ddd;
-      display: block;
-      margin-bottom: .625em;
-    }
-    
-    table td {
-      border-bottom: 1px solid #ddd;
-      display: block;
-      font-size: .8em;
-      text-align: right;
-    }
-    
-    table td::before {
-     
-      content: attr(data-label);
-      float: left;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    
-    table td:last-child {
-      border-bottom: 0;
-    }
-  }
-  
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 5px 7px gray;
+}
+
+/* Set shadow on just the table head */
+thead {
+  box-shadow: 0px 0px 10px gray;
+}
+
+/* Add some space around table heading. Align text to right and transform to uppercase */
+
+th {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+td {
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dee8f5;
+}
+td .aEdit{
+  color: green;
+  font-size: medium;
+  cursor :pointer;
+}
+
+.aEdit :hover{
+  color: blue;
+  cursor: pointer;
+}
+td .aDelete{
+  color: red;
+  font-size: medium;
+  cursor :pointer;
+}
+
+.aEdit :hover{
+  color: black;
+  cursor: pointer;
+}

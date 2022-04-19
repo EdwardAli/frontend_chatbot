@@ -2,14 +2,11 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import {  Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useParams, useNavigate } from "react-router-dom";
-import {  TextField, IconButton } from '@material-ui/core';
+import { Grid, Paper, TextField, IconButton } from '@material-ui/core';
 import {  DeleteOutline, EditOutlined, SearchOutlined  } from "@material-ui/icons";
 import './supplierSProduct.css';
 
@@ -36,7 +33,7 @@ function SupplierSProduct() {
   const [ Description, setDescription] = useState('');
   const [ Price, setPrice] = useState('');
   const [ Shop, setShop] = useState('');
-  
+  const fieldStyle={fontSize:30, margin:'4px 0', padding: 5}
   let navigate = useNavigate();
   
 
@@ -105,51 +102,52 @@ const deleteProduct =()=>{
   
   return (
  //login page forms
-    <div className="Container cont"> 
-        <h1>Edit/Delete Product</h1>
-        
-        <div className="Container">
-        
-        <Field as ={TextField}
-          style={fieldStyle}
-          label="Product Name"
-          placeholder={Name}
-          value={Name}
-          onChange={(e)=>{setName(e.target.value)}}
-        />
-        <label>Desription:</label>
-        <Field as ={TextField}
-        type="text"
-        value={Description}
-        onChange={(e)=>{setDescription(e.target.value)}}
-        />
-        <label>Category:</label>
-        <Field as ={TextField}
-        type="text"
-        value={Quantity}
-        onChange={(e)=>{setQuantity(e.target.value)}}
-        />
-        <label>Price:</label>
-        <Field as ={TextField}
-        type="number"
-        value={Price}
-        onChange={(e)=>{setPrice(e.target.value)}}
-        />
-        <Field as ={TextField}
-        type="text"
-        value={Shop}
-        onChange={(e)=>{setShop(e.target.value)}}
-        />
+    <Grid>
+        <Paper className="Container cont"> 
+          <h1>Edit/Delete Product</h1>
+            
+          <div className="Container">
+            <label>Name:</label>
+            <input
+              label="Name"
+              style={fieldStyle}
+              value={Name}
+              onChange={(e)=>{setName(e.target.value)}}
+            />
+            <label>Desription:</label>
+            <input
+            type="text"
+            value={Description}
+            onChange={(e)=>{setDescription(e.target.value)}}
+            />
+            <label>Quantity:</label>
+            <input
+            type="text"
+            value={Quantity}
+            onChange={(e)=>{setQuantity(e.target.value)}}
+            />
+            <label>Price:</label>
+            <input
+            type="number"
+            value={Price}
+            onChange={(e)=>{setPrice(e.target.value)}}
+            />
+            <input
+            type="hidden"
+            value={Shop}
+            onChange={(e)=>{setShop(e.target.value)}}
+            />
 
 
-        <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
-        <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
-        
-          {/* ********************************** * */}
-          
-        {/* *************************************       */}
-        </div>
-    </div>
+            <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
+            <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
+            
+              {/* ********************************** * */}
+              
+            {/* *************************************       */}
+            </div>
+        </Paper>
+    </Grid>
   );
 }
 

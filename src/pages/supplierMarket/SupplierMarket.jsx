@@ -105,7 +105,7 @@ function SupplierMarket() {
                 }}>
                   <th>{key+1}</th>
                   <td>{value.Name}</td>
-                  <td>MK: {value.Price}</td>
+                  <td>MK{value.Price}</td>
                   <td>{value.Quantity}</td>
                   <td>{value.Description}</td>
                   <td>{value.Shop}</td>
