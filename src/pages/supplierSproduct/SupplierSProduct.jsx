@@ -138,7 +138,6 @@ const deleteProduct =()=>{
             onChange={(e)=>{setShop(e.target.value)}}
             />
 
-
             <button onClick={updateProduct} style={{cursor: "pointer"}}> Update Product</button>
             <button onClick={deleteProduct} style={{cursor: "pointer"}}> Delete Product</button>
             
