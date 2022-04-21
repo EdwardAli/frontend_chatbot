@@ -12,7 +12,6 @@ import {
 import {  Link } from "react-router-dom";
 import DrawerSup from './DrawerSupplier';
 import { useNavigate } from "react-router-dom";
-import Myshops from "./Myshops";
 
 const TopbarSupplier = () => {
   const navigate = useNavigate();
@@ -33,18 +32,38 @@ const TopbarSupplier = () => {
   };
 
   return (
-    <>
-        <AppBar>
-
-          <center>
-              <h2>Window shopping Admin</h2>
-          </center>
-        </AppBar>
-
-        <Myshops/>
-      
-      
-    </>
+    <React.Fragment>
+      <AppBar sx={{ background: "#343857", marginTop:"65px" }}>
+        <Toolbar>
+          {isMatch ? (
+            <>
+              <Typography sx={{ fontSize: "2rem", paddingLeft: "10%" }}>
+                Window Shoping
+              </Typography>
+              <DrawerSup />
+            </>
+          ) : (
+            <>
+              <Tabs
+                sx={{ flexGrow: 1 }}
+                indicatorColor="secondary"
+                textColor="inherit"
+                value={value}
+                onChange={(e, value) => setValue(value)}
+                centered
+              >
+            
+                <Tab label="My Products" onClick={ShopProducts}/>
+                {/* <Tab label="New Product" onClick={NewProduct}/> */}
+                <Tab label="All Supplies" onClick={AllProducts}/>
+             
+              </Tabs>
+           
+            </>
+          )}
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
   );
 };
 

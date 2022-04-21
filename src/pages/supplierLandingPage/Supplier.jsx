@@ -162,7 +162,7 @@ const NewProduct = () =>{
                       
                     );
                   })}
-            </tbody>
+          </tbody>
          
 
         </table>
