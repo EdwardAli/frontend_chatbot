@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Thu Apr 21 2022 15:07:07 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/components/topbarSupplier/TopbarSupplier.jsx
+
+
+Created files:
+* .autogit/logs/log-21-3-2022-14-35-2.txt
+* src/components/topbarSupplier/Myshops.js
+
+
+Deleted files:
+
+
+Renamed files:
