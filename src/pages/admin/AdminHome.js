@@ -5,9 +5,9 @@ function AdminHome(){
     return(
         <div>
         
-            <AppBar sx={{ height:"18vh" }}>
+            <AppBar sx={{ height:"20vh" ,padding: "5vh"}}>
                 <center>
-                    <h2>Window Shopping Admin</h2>
+                    <h1>Window Shopping Admin</h1>
                </center>
             </AppBar>
             

@@ -37,7 +37,7 @@ const TopbarSupplier = () => {
         <Toolbar>
           {isMatch ? (
             <>
-              <Typography sx={{ fontSize: "2rem", paddingLeft: "10%" }}>
+              <Typography sx={{ fontSize: "2rem", paddingLeft: "10%" , color:"black" }}>
                 Window Shoping
               </Typography>
               <DrawerSup />
