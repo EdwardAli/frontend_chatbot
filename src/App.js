@@ -192,7 +192,7 @@ useEffect(()=> {
        <Routes>
           <Route path="/registration" exact element={<Registration/>} />
           <Route path="/" exact element={<Login/>} />
-          <Route element={<AdminLayout/>}>  
+          <Route path= "/admin" exact element={<TopbarS}>  
           <Route path="/supplier" exact element={<Supplier/>} />
           <Route path="/supplierProducts" exact element={<SupplierProducts/>} />
           <Route path="/supplierSProduct" exact element={<SupplierSProduct/>} />
