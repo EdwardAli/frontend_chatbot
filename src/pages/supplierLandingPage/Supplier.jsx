@@ -158,8 +158,8 @@ const NewProduct = () =>{
                         <td><a className="aDelete" onClick={clickeME}> Delete</a></td>
                       </tr>
                     
-                </tr>
-                
+                      </tr>
+                      
                     );
                   })}
             </tbody>

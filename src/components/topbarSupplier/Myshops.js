@@ -22,8 +22,8 @@ function Myshops(){
         });
     }, []);
 
-    let deleteID;
-    let deleteName;
+    var deleteID;
+    var deleteName;
     const letsDelete = () =>{
         confirmAlert({
             title: "Delete " + deleteName+ " ",
@@ -33,9 +33,7 @@ function Myshops(){
                     label: 'Yes',
                     onClick: () =>{
                         axios
-                            .delete(`https://windowshoppingserver.herokuapp.com/shop/delete/${deleteID} `,{
-                                headers: { accessToken: localStorage.getItem("accessToken") },
-                            }) 
+                            .delete(`https://windowshoppingserver.herokuapp.com/shop/delete/${deleteID}`)
                             .then(()=>{
                                 window.location.reload(false);
                             });  
@@ -76,9 +74,9 @@ function Myshops(){
                           return val;
                         }
                     }).map((val,key)=>{
+                        
                         deleteID = val.id;
                         deleteName= val.shopName;
-
                         return(
                             // <h1>{val.shopName}</h1>
                             <tr>
@@ -88,7 +86,8 @@ function Myshops(){
                                 <td>{val.phoneNumber}</td>
                                 <td>{val.email}</td>
                                 <td>{val.location}</td>
-                                <td><button onClick={letsDelete}>Detete</button></td>
+                                
+                                <td><a className="aDelete" onClick={letsDelete}>Detete</a></td>
                             </tr>
                             
                         )
