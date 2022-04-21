@@ -53,16 +53,17 @@ function Myshops(){
 
     return(
         <div className="myshopHome">
+            
              <hr/>
              <table>
                  <thead>
-                     <th>#</th>
+                     
                      <th>ID</th>
                      <th>Name</th>
                      <th>Phone Numer</th>
                      <th>Email</th>
                      <th>Location</th>
-                     <th>Action</th>
+                     {/* <th>Action</th> */}
                  </thead>
                  <tbody>
                     {allShops.filter((val)=>{
@@ -80,14 +81,13 @@ function Myshops(){
                         return(
                             // <h1>{val.shopName}</h1>
                             <tr>
-                                <th>{key+1}</th>
                                 <td>{val.id}</td>
                                 <td>{val.shopName}</td>
                                 <td>{val.phoneNumber}</td>
                                 <td>{val.email}</td>
                                 <td>{val.location}</td>
                                 
-                                <td><a className="aDelete" onClick={letsDelete}>Detete</a></td>
+                                {/* <td><a className="aDelete" onClick={letsDelete}>Detete</a></td> */}
                             </tr>
                             
                         )

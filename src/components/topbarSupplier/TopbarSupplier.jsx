@@ -34,7 +34,13 @@ const TopbarSupplier = () => {
 
   return (
     <>
-      
+        <AppBar>
+
+          <center>
+              <h2>Window shopping Admin</h2>
+          </center>
+        </AppBar>
+
         <Myshops/>
       
       
