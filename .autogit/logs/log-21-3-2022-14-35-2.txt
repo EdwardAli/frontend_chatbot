@@ -1,0 +1,41 @@
+-------------------- Auto-Git Log --------------------
+		Thu Apr 21 2022 14:35:02 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/pages/supplierMarket/SupplierMarket.jsx
+
+
+Created files:
+* .autogit/logs/log-21-3-2022-14-4-1.txt
+* src/pages/admin/AdminHome.js
+
+
+Deleted files:
+* src/image/IMG-20220120-WA0010.png
+* src/image/Kholamain.jpeg
+* src/image/R.jpg
+* src/image/account.jpg
+* src/image/breedtype.png
+* src/image/cattlepig.jpg
+* src/image/commentUser.jpg
+* src/image/download.png
+* src/image/expand.png
+* src/image/facebook.png
+* "src/image/farm animals.jpg"
+* src/image/fence.jpg
+* src/image/khola.jpg
+* src/image/livestock_banner.jpg
+* src/image/livestockgeneral.jpg
+* src/image/livestocksy.jpg
+* src/image/login.jpg
+* src/image/next.png
+* src/image/profit.jpg
+* src/image/signup.jpg
+* src/image/twitter.jpg
+* src/image/watsapp.png
+* src/image/whatsapp.png
+
+
+Renamed files:
