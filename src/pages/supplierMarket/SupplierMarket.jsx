@@ -10,7 +10,6 @@ import {  Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import {  TextField, IconButton } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
-import UserSupplier from '../../image/commentUser.jpg'
 import './supplierMarket.css';
 
 const useStyles = makeStyles((theme) => ({
