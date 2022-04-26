@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Tue Apr 26 2022 02:06:26 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* .autogit/autogit.json
+* package-lock.json
+* package.json
+* src/pages/admin/AdminHome.js
+
+
+Created files:
+* .autogit/logs/log-24-3-2022-16-38-30.txt
+
+
+Deleted files:
+
+
+Renamed files:
