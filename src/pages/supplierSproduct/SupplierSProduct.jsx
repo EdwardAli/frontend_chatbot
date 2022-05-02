@@ -11,7 +11,7 @@ import {  DeleteOutline, EditOutlined, SearchOutlined  } from "@material-ui/icon
 import './supplierSProduct.css';
 
 
-
+//adding style
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),

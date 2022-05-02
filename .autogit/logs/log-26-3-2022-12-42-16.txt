@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Tue Apr 26 2022 12:42:16 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/pages/admin/AdminHome.js
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

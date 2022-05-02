@@ -5,8 +5,10 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import "./myshop.css"
 
-function Myshops(){
 
+//function for getting all shops in the admin component 
+function Myshops(){
+    //variable
     const [allShops, setShops] = useState([]);
     const [searchTitle, setSearchTitle] = useState("");
   

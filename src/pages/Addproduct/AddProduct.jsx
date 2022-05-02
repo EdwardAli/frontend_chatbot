@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import User from '../image/login.jpg';
 
+
+{/**A function for adding products */}
 function Registration() {
 
   const navigate = useNavigate();
@@ -37,6 +39,7 @@ var shopId = localStorage.getItem("id");
 
   return (
     <div className="loginContainer">
+      {/**A form for adding products */}
         <h1>Add Product(s)</h1>
         <img src={User} alt="login symbol" style={{ height: "70px", width: "70px"}} />
      <div className="loginContainer">

@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../helpers/AuthContext";
 import './supplierProducts.css';
 
-
+//function for rendering products of a specific shop
 function SupplierProducts() {
   let { id } = useParams();
   const[ShopId, setShopId] = useState();
@@ -20,12 +20,12 @@ function SupplierProducts() {
     Description: "",
     Price:"",
   };
-
+//getting products
   useEffect(()=>{
     setShopId(localStorage.getItem("id"))
 }, [])
 
-
+//getting the access token for a particular user
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate( "/login");
@@ -38,10 +38,10 @@ function SupplierProducts() {
     Description: Yup.string().required(),
     Price: Yup.string().required(),
   });
-
+  //sending the newly added product in the shop
   const onSubmit = (data) => {
   
-    
+  //sending the newly added product to the server and navigate to server
    var id = localStorage.getItem("id");
    console.log(data);
     axios
@@ -55,6 +55,7 @@ function SupplierProducts() {
 
   return (
     <center className="createPostPage">
+      {/**A form for adding the new product */}
       <p>Fill in</p>
       <Formik
         initialValues={initialValues}

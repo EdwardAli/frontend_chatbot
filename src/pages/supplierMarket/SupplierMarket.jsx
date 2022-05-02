@@ -12,6 +12,7 @@ import {  TextField, IconButton } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
 import './supplierMarket.css';
 
+// initialising classes to the methodof UseStyles() method
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -35,7 +36,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-
+//function for seeing how products from other shops are fairing 
 function SupplierMarket() {
 
   // initialising classes to the methodof UseStyles() method
@@ -58,7 +59,7 @@ function SupplierMarket() {
 
   return (
     <div className="home"> 
-                
+          {/**a textfield for the search button */}
           <TextField style={{margin: "10px",marginTop: "8vh", backgroundColor: "#fafafa"}}
           onChange={(e) => setSearchTitle(e.target.value)}
                
@@ -75,7 +76,7 @@ function SupplierMarket() {
               />
               <hr/>
             
-          
+      {/**A table of products from various shops */}
       <table className="">
           <thead>
             <tr>
@@ -100,6 +101,7 @@ function SupplierMarket() {
                   }).map((value, key) => {
               return (
                 <tr onClick={() => {
+                  //setting the products in the tables 
                   localStorage.setItem("orderId", JSON.stringify(value.ProductId))
                 }}>
                   <th>{key+1}</th>

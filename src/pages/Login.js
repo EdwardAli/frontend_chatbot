@@ -29,18 +29,21 @@ function Login() {
     
     const data = { shopName:shopName, password: password };
     console.log(data);
+    //checki if shop name matches the password and then navigate to admin 
     if(data.shopName==="admin" && data.password ==="admin"){
       navigate("/admin")
     }
     else{
+      //posting user data to the the server if the password and shopname match 
       axios.post("https://windowshoppingserver.herokuapp.com/shop/login", data).then((response) => {
       if (response.data.error) {
 
-        
+        //alert the user if the shop and password do not match
         alert("shop name and password do not match");
       }
     
       else {
+        //setting access token for a particular user 
         localStorage.setItem("accessToken", response.data.token);
         localStorage.setItem("id", response.data.id);
         setAuthState({
@@ -65,7 +68,9 @@ function Login() {
   };
   return (
     <center>
+      {/**login form  */}
       <Paper elevation={10} style={paperStyle}>
+        {/**Welcome message on the page */}
       <h3>Welcome to Window Shopping</h3>
       <Grid align='center'>
         <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>

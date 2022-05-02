@@ -190,6 +190,7 @@ useEffect(()=> {
       
         
         <div className="container">
+          {/**Routes for each and every page */}
        <Routes>
           <Route path="/registration" exact element={<Registration/>} />
           <Route path="/" exact element={<Login/>} />

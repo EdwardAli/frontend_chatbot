@@ -7,7 +7,9 @@ import * as Yup from "yup";
 import axios from "axios";
 import '../pages/Registration.css'
 
+//function for the user to register upon clicking the register button
 function Registration() {
+  //initialising classes to the methodof UseStyles() method
   const avatarStyle = { backgroundColor: '#1bbd7e' }
   const paperStyle = { padding: 20, width: 600, margin: "0 auto" }
   const fieldStyle={fontSize:30, margin:'4px 0', padding: 5}
@@ -42,7 +44,7 @@ function Registration() {
 
   return (
     <Grid className="createPostPage">
-        
+        {/**registration form */}
       <Paper style ={paperStyle}>
         <Grid align='center'>
           <Avatar style={avatarStyle}>
