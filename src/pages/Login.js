@@ -5,8 +5,9 @@ import { AuthContext } from "../helpers/AuthContext";
 import { Grid,Paper, Avatar, TextField, Button } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-
+//function for login 
 function Login() {
+  //initialising classes to the methodof UseStyles() method
   const paperStyle={padding :20,height:'70vh', width: 380, margin:" 10px auto"}
   const textfieldStyle={fontSize:30, margin:'8px 0', padding: 5}
   const avatarStyle={backgroundColor:'#1bbd7e'}
