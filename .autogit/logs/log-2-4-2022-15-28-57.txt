@@ -1,0 +1,23 @@
+-------------------- Auto-Git Log --------------------
+		Mon May 02 2022 15:28:57 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/pages/Addproduct/AddProduct.jsx
+* src/pages/Login.js
+* src/pages/Registration.js
+* src/pages/admin/Myshops.js
+* src/pages/supplierMarket/SupplierMarket.jsx
+* src/pages/supplierProducts/SupplierProducts.jsx
+* src/pages/supplierSproduct/SupplierSProduct.jsx
+
+
+Created files:
+* .autogit/logs/log-26-3-2022-12-42-16.txt
+
+
+Deleted files:
+
+
+Renamed files:
