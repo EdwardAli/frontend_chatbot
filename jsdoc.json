@@ -2,5 +2,16 @@
     "source":{
         "include":["src"],
         "includePattern":".js$",
-        "excludePattern"
- 
+        "excludePattern":"(node-modules|docs)"
+    },
+    "plugins":["plugins/markdown"],
+    "templates":{
+        "cleverlinks":true,
+        "monospacelinks": true
+    },
+    "opts":{
+        "recurse":true,
+        "destination":"./docs/"
+    }
+
+}
