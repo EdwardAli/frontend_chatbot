@@ -22,7 +22,7 @@ function Registration() {
     password: "",
     comfirmPassword: "",
   };
-
+  //Input validation for for texttfields
   const validationSchema = Yup.object().shape({
     shopName: Yup.string().min(3).max(25).required(),
     phoneNumber: Yup.string().min(10).max(15).required(),
@@ -59,6 +59,7 @@ function Registration() {
             validationSchema={validationSchema}>
         
         <Form className="formRegisterContainer">
+          {/**textfield for the registration form  */}
         <Field as={TextField}
           style={fieldStyle}
           fullWidth 
@@ -115,7 +116,7 @@ function Registration() {
               name="comfirmPassword"
               helperText={<ErrorMessage name="comfirmPassword" component="span" />}
             />
-
+            {/**registration button */}
             <div className="">
               <Button className="" type="submit"> Register</Button>
               <Link to="/" className=""><p className="RegisterStatement" style={{color: 'orangered'}}>Already registered? | Home</p></Link>

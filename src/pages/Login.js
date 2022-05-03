@@ -5,7 +5,7 @@ import { AuthContext } from "../helpers/AuthContext";
 import { Grid,Paper, Avatar, TextField, Button } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-//function for login 
+//function for the user to login upon clicking login button 
 function Login() {
   //initialising classes to the methodof UseStyles() method
   const paperStyle={padding :20,height:'70vh', width: 380, margin:" 10px auto"}
@@ -19,7 +19,7 @@ function Login() {
 
   let navigate = useNavigate();
 
-
+  //letting the user to navigate
   const register = () => {
         navigate("/registration");
   };
@@ -77,8 +77,10 @@ function Login() {
         <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
           <h2>Login</h2>
       </Grid>
+      {/**Textfield for the login form  */}
         <TextField label='Shopname' style={textfieldStyle} placeholder='Enter shopname' variant="outlined" fullWidth required onChange={(event) => {setShopName(event.target.value);}}/>
         <TextField label='Password' style={textfieldStyle} placeholder='Enter password' variant="outlined" type='password' fullWidth required onChange={(event) => {setPassword(event.target.value);}}/>
+        {/**Login and register button */}
         <Button type='submit' color='primary' variant="contained" onClick={login} style={btnstyle} fullWidth>Login</Button>
         <Button type='submit' color='primary' variant="contained" onClick={register} style={btnstyle} fullWidth>Register</Button>
       </Paper>

@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
+//function for rendering products from specific  shop 
 function SupplierSProduct() {
   const [ name, setName] = useState('');
   const [ quantity, setQuantity] = useState('');
@@ -36,7 +36,7 @@ function SupplierSProduct() {
   const fieldStyle={fontSize:30, margin:'4px 0', padding: 5}
   let navigate = useNavigate();
   
-
+// verify that the user has a valid token and is aunthticated
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/login");
@@ -88,7 +88,7 @@ console.log(name)
 
 
   return (
- //login page forms
+ // forms
     <Grid>
         <Paper className="Container cont"> 
           <h1>Edit Product</h1>

@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../helpers/AuthContext";
 import './supplierProducts.css';
 
-//function for rendering products of a specific shop
+//function for adding products of a specific shop
 function SupplierProducts() {
   let { id } = useParams();
   const[ShopId, setShopId] = useState();
@@ -25,13 +25,14 @@ function SupplierProducts() {
     setShopId(localStorage.getItem("id"))
 }, [])
 
-//getting the access token for a particular user
+// verify that the user has a valid token and is aunthticated
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate( "/login");
      
     }
   }, []);
+  //input validation
   const validationSchema = Yup.object().shape({
     Name: Yup.string().required("You must input a Product Name!"),
     Quantity: Yup.string().required(),

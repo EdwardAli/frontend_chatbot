@@ -21,6 +21,7 @@ import TopbarSupplier  from "./components/topbarSupplier/TopbarSupplier";
 import { Typography } from '@material-ui/core';
 import AdminHome from "./pages/admin/AdminHome";
 
+//initialising classes to the methodof UseStyles() method
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -78,7 +79,7 @@ function App() {
   //assigning classes to the method useStyles()
   const classes = useStyles();
 
-   // for the register livestock modal
+   // for the registration modal
    const [open, setOpen] = React.useState(false);
    const handleOpen = () => setOpen(true);
    const handleClose = () => setOpen(false);
